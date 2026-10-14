@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050509">
+  <meta name="description" content="Site phygital — musique, création et univers de Quentin Ashley Cambillau.">
+  <title>PHYGITAL — Quentin Ashley Cambillau</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <canvas id="space" aria-hidden="true"></canvas>
+
+<!-- Image spatiale avec déformation liquide -->
+  <canvas id="liquid-image" aria-hidden="true"></canvas>
+
+  <main>
+    <section id="music-page" class="page music-page">
+      <div class="topline"><span>SON - UNIVERS</span><span>PHYGITAL / 01</span></div>
+      <div class="flower-orbit" id="flower-orbit" aria-label="Sélection musicale">
+        <div class="orbit-ring"></div>
+        <div class="outer-flowers" id="outer-flowers"></div>
+        <button class="flower central-flower is-neutral" id="central-flower" aria-label="Revenir à la musique d'ambiance">
+          <span class="petals"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="flower-core"></span>
+        </button>
+        <p class="orbit-hint">CHOISIS UNE FLEUR</p>
+      </div>
+
+      <section class="player" id="player" aria-live="polite">
+        <button class="close-player" id="close-player" aria-label="Fermer la musique sélectionnée">×</button>
+        <div class="track-heading">
+          <span class="eyebrow" id="track-state">AMBIANCE</span>
+          <h2 id="track-name">Espace calme</h2>
+        </div>
+        <canvas id="waveform" aria-label="Analyse audio en temps réel"></canvas>
+        <div class="time-row"><span id="current-time">0:00</span><span id="duration">0:00</span></div>
+        <div class="player-foot"><span id="track-description">Une musique d'ambiance pour explorer l'espace.</span><span class="audio-status" id="audio-status">PRÊT</span></div>
+      </section>
+
+      <button class="scroll-cue" id="go-profile" aria-label="Aller à la présentation">
+        <span></span><span class="arrow">↓</span>
+      </button>
+    </section>
+
+    <section id="profile-page" class="page profile-page">
+      <div class="topline"><button class="back-top" id="go-music">↑ RETOUR AUX FLEURS</button><span>PHYGITAL / 02</span></div>
+      <div class="profile-content">
+        <div class="portrait-wrap"><img src="assets/images/portrait.png" alt="Portrait de Quentin Ashley Cambillau" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'"><div class="portrait-placeholder">Q<br><small>A</small></div></div>
+        <p class="eyebrow">JE ME PRÉSENTE</p>
+        <h1>Quentin <span>“Ashley”</span><br>CAMBILLAU</h1>
+        <p class="aliases">ARCHANGEL · YURIATO · BLXCKSKIRT</p>
+        <div class="profile-divider"></div>
+        <p class="eyebrow">JE SUIS</p>
+        <div class="jobs" id="jobs">
+          <button data-job="Graphisme">Graphiste</button><span>/</span>
+          <button data-job="Montage">Monteur</button><span>/</span>
+          <button data-job="Composition">Producteur</button><span>/</span>
+          <button data-job="Ingénierie du son">Ingénieur du son</button><span>/</span>
+          <button data-job="Développement">Développeur</button><span>/</span>
+          <button data-job="Streaming">Streamer</button><span>/</span>
+          <button data-job="Autres">...</button>
+        </div>
+        <div class="job-detail" id="job-detail" hidden>
+          <button class="detail-close" id="detail-close" aria-label="Fermer les détails">×</button>
+          <span class="eyebrow">FOCUS</span><h3 id="detail-title"></h3><p id="detail-text"></p><a id="detail-link" href="#" target="_blank" rel="noopener" hidden></a>
+        </div>
+        <div class="profile-divider"></div>
+        <p class="eyebrow">MON OBJECTIF</p>
+        <p class="objective">Pouvoir réaliser des projets de A à Z en indépendant, de mes seules mains : du scénario à la caméra, du montage à la création sonore, et toutes les étapes avant et après.</p>
+      </div>
+      <button class="scroll-cue profile-up" id="go-music-bottom"><span></span><span class="arrow">↑</span></button>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
